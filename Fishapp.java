@@ -9,14 +9,14 @@ class Fishing
         
         JFrame frame = new JFrame("Fish APP"); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500,600);
+        frame.setSize(400,500);
         //JButton button = new JButton("Press");
         //frame.getContentPane().add(button);
         
         
         JMenuBar topmenu = new JMenuBar();
         JMenu m1 = new JMenu("New");
-        JMenu m2 = new JMenu("Save");
+        JMenu m2 = new JMenu("Save");c
         topmenu.add(m1);
         topmenu.add(m2);
         JMenuItem m11 = new JMenuItem("New Trip");
@@ -24,8 +24,13 @@ class Fishing
         m1.add(m11);
         m2.add(m22);
         frame.getContentPane().add(BorderLayout.NORTH, topmenu);
-        frame.setVisible(true); //Needs to be last line to initialize
 
+        JLabel label1 = new JLabel("Welcome to FishScribe");
+        label1.setBounds(125,10,200,20);
+        frame.add(label1);
+        frame.setLayout(null);
+        frame.setVisible(true); //Needs to be last line to initialize
+        
         
         /*
         System.out.println("hello");
