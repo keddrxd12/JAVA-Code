@@ -1,15 +1,17 @@
 import java.util.Scanner;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 
 class Fishing
 {
-       public static void main(String[] args) 
+    public static void main(String[] args) 
     {
         
         JFrame frame = new JFrame("Fish APP"); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400,500);
+        frame.setSize(350,400);
         //JButton button = new JButton("Press");
         //frame.getContentPane().add(button);
         
@@ -35,7 +37,7 @@ class Fishing
         JLabel weightLabel = new JLabel("Fish Weight");
         JLabel lengthLabel = new JLabel("Fish Length");
 
-        label1.setBounds(125,30,200,20);
+        label1.setBounds(100,30,200,20);
         speciesLabel.setBounds(60,100,75,20);
         weightLabel.setBounds(60,150,75,20);
         lengthLabel.setBounds(60,200,75,20);
@@ -58,21 +60,25 @@ class Fishing
         frame.add(weightField);
         frame.add(lengthField);
 
-        frame.setVisible(true); //Needs to be last line to initialize
-        
-        
-        /*
-        System.out.println("hello");
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the location you were fishing");
-        String location = input.next();
-        System.out.println("The location is: "+location);
-        System.out.println("Enter the species that you caught");
-        String species = input.next();
-        System.out.println("The species you caught was: "+species);
-        */
+        JButton subBut = new JButton("Submit");
+        subBut.setBounds(120,275,100,20);
+        frame.add(subBut);
+        frame.setVisible(true);
 
+        subBut.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println("Pressed");
+            }
+        });
     }
+        
 
+         //Needs to be last line to initialize
 
 }
+   
+
+
+//"C:\Users\Adam Kedra\\Documents\\Code\\JAVA Code"
