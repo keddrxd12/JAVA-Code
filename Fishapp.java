@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.io.FileWriter;
 
 class Fishing
 {
@@ -47,9 +48,9 @@ class Fishing
         frame.add(lengthLabel);
         frame.setLayout(null);
         
-        JTextField speciesField = new JTextField();
-        JTextField weightField = new JTextField();
-        JTextField lengthField = new JTextField();
+        JTextField speciesField = new JTextField(20);
+        JTextField weightField = new JTextField(20);
+        JTextField lengthField = new JTextField(20);
 
         speciesField.setBounds(150,100,150,20);
         weightField.setBounds(150,150,150,20);
@@ -69,10 +70,11 @@ class Fishing
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println("Pressed");
-                BufferedWriter bw = new BufferedWriter(new FileWriter("fish.txt"));
-                bw.write(speciesField.getText());
-                bw.close();
-            }
+                String filePath = "C:\\Users\\Adam Kedra\\Documents\\Code\\JAVA Code\\fish.txt";
+                FileWriter fw = new FileWriter(filePath);
+                speciesField.write(fw);
+                fw.close();
+            }   
         });
     }
         
