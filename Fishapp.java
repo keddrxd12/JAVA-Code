@@ -64,6 +64,7 @@ class Fishing
         subBut.setBounds(120,275,100,20);
         frame.add(subBut);
         frame.setVisible(true);
+        
 
         subBut.addActionListener(new ActionListener()
         {
@@ -72,6 +73,7 @@ class Fishing
                 System.out.println("Pressed");
                 String filePath = "C:\\Users\\Adam Kedra\\Documents\\Code\\JAVA Code\\fish.txt";
                 FileWriter fw = new FileWriter(filePath);
+                String speciesText = speciesField.getText();
                 speciesField.write(fw);
                 fw.close();
             }   
