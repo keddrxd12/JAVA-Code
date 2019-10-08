@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -70,6 +69,9 @@ class Fishing
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println("Pressed");
+                BufferedWriter bw = new BufferedWriter(new FileWriter("fish.txt"));
+                bw.write(speciesField.getText());
+                bw.close();
             }
         });
     }
