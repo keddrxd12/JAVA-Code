@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.io.FileWriter;
+import java.util.Date;
 
 class fishapp
 {
@@ -75,10 +76,29 @@ class fishapp
 	                System.out.println("Pressed");
 	                try 
 	                {
-	                	FileWriter fw = new FileWriter("fish.txt");
+	                	FileWriter fw = new FileWriter("fish.txt",true);
 	                	BufferedWriter bw = new BufferedWriter(fw);
+	                	
 	                	String speciesText = speciesField.getText();
-	                	bw.write(speciesText);
+	                	String weightText = weightField.getText();
+	                	String lengthText = lengthField.getText();
+	                	
+	                	bw.write("Species: "+speciesText);
+	                	bw.write('\n');
+	                	bw.write("Weight: "+weightText);
+	                	bw.write('\n');
+	                	bw.write("Length: "+lengthText);
+	                	bw.write('\n');	
+	                	Date date = new Date();
+	                	String numberAsString = Long.toString(date.getTime());
+	                    bw.write(numberAsString);
+	                	bw.write('\n');
+	                	bw.write('\n');
+	                	
+	                	speciesField.setText("");
+	                	weightField.setText("");
+	                	lengthField.setText("");
+	                	
 	                	bw.close();
 	                }
 	                catch(IOException ex)
